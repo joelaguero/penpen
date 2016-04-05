@@ -7,8 +7,15 @@ class ArticleList extends React.Component{
   }
 
   render() {
+    var ArticleListEntries = [];
+    for (var i = 0; i < this.props.articles.length; i++) {
+      ArticleListEntries.push(<ArticleListEntry key={i} article={this.props.articles[i]} />);
+    }
+
     return (
-      <ArticleListEntry />
+      <div>
+        { ArticleListEntries }
+      </div>
     );
   }
 }
