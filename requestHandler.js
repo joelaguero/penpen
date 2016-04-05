@@ -1,3 +1,5 @@
+
+
 var _makeGetRequest = function(url, callback) {
   $.ajax({
     url: url,
@@ -12,8 +14,8 @@ var _makeGetRequest = function(url, callback) {
 };
 
 var getUrlMetaData = function(url, callback, tag) {
-    _makeGetRequest(url, function(err, data) {
-      if (err) throw err;
-      callback(null, data);
-    })
+  _makeGetRequest(url, function(err, data) {
+    if (err) throw err;
+    callback(null, data);
+  });
 };
