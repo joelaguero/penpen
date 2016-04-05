@@ -29,6 +29,12 @@ class App extends React.Component{
     this.setState({
       articles: articles
     });
+
+    $.ajax({
+      type: "POST",
+      url: '/api/articles',
+      data: article
+    });
   }
 
   render() {

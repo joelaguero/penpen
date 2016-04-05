@@ -25,6 +25,7 @@ module.exports = {
     article.image = data.image;
     article.save();
 
+    console.log('This was just added...', article);
     res.sendStatus(200);
   }
 
