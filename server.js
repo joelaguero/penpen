@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 var path = require('path');
 
 var app = express();
@@ -10,8 +11,11 @@ var port = 3000;
 mongoose.connect('mongodb://localhost:27017/penpen');
 
 // Configure the server with routes.
-require('./config/routes.js')(app, express);
 app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+require('./config/routes.js')(app, express);
+
 app.get('/', function(req, res) {
   res.sendFile('index.html');
 });
