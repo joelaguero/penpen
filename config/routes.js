@@ -1,7 +1,7 @@
-var articleController = require('../articles/articleController.js');
-var userController = require('../users/userController.js');
+var articlesController = require('../articles/articleController.js');
+var usersController = require('../users/userController.js');
 
 module.exports = function(app, express) {
-  app.get('/api/links', linksController.allLinks);
-  app.post('/api/links', linksController.newLink);
+  app.get('/api/articles', articlesController.allArticles);
+  app.post('/api/articles', articlesController.newArticle);
 };
