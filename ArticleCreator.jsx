@@ -1,3 +1,4 @@
+window.storage = [];
 import React from 'react';
 
 class ArticleCreator extends React.Component {
@@ -13,9 +14,17 @@ class ArticleCreator extends React.Component {
       getUrlMetaData(target, function(err, data) {
         var el = $( '<div></div>' );
         el.html(data);
-        var metaTags = $(el).find()
+
+        var article = new Object;
+        el.find("meta[property*='og']").each(function(key, val) {
+          var property = this.getAttribute('property').substr(3);
+          var content = val.content;
+          article[property] = content;
+          console.log(article);
+          window.storage.push(article);
+        });
       });
-    };
+    }
 
     return(
       <form onSubmit={handleClick.bind(this)}>
