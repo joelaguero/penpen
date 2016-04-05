@@ -21,10 +21,10 @@ module.exports = {
     article.title = data.title;
     article.description = data.description;
     article.url = data.url;
+    article.site_name = data.site_name;
     article.image = data.image;
     article.save();
 
-    console.log("This article should have just been added to the database: ", article);
     res.sendStatus(200);
   }
 

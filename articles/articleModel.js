@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var articleSchema = mongoose.Schema({
   title: String,
   description: String,
+  site_name: String,
   url: String,
   image: String,
   date: Date,
