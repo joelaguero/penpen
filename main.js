@@ -1,1 +1,1 @@
-document.write("It works.");
+import App from './App.jsx';
