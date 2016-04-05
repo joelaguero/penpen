@@ -1,0 +1,22 @@
+{
+  "name": "penpen",
+  "version": "1.0.0",
+  "description": "Simple app for writers to showcase articles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelaguero/penpen.git"
+  },
+  "author": "Joel Aguero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelaguero/penpen/issues"
+  },
+  "homepage": "https://github.com/joelaguero/penpen#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
