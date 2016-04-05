@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ArticleList from './ArticleList.jsx';
+import ArticleCreator from './ArticleCreator.jsx';
 
 class App extends React.Component{
   constructor(props) {
@@ -11,6 +12,7 @@ class App extends React.Component{
     return(
       <div>
         <h1>Welcome to Penpen, {this.props.name}!</h1>
+        <ArticleCreator/>
         <ArticleList/>
       </div>
     );
