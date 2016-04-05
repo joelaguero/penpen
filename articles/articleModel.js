@@ -5,7 +5,16 @@ var articleSchema = mongoose.Schema({
   description: String,
   url: String,
   image: String,
+  date: Date,
   created_at: Date
+});
+
+articleSchema.pre('save', function(next) {
+  var currentDate = new Date();
+  if (!this.created_at) {
+    this.created_at = currentDate;
+  }
+  next();
 });
 
 var Article = mongoose.model('Article', articleSchema);
