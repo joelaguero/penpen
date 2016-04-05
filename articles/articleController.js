@@ -15,6 +15,7 @@ module.exports = {
   newArticle: function(req, res) {
     console.log('Inside new article!');
     console.log(req.body);
+    res.sendStatus(200);
     // var article = new Article();
   }
 
