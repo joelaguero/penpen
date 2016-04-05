@@ -10,19 +10,18 @@ class ArticleCreator extends React.Component {
   render() {
     var handleClick = function(e) {
       e.preventDefault();
-      var target = this.refs.targetUrl.value;
-      getUrlMetaData(target, function(err, data) {
-        var el = $( '<div></div>' );
-        el.html(data);
 
+      getUrlMetaData(this.refs.targetUrl.value, function(err, data) {
+        var el = $( '<div></div>' ).html(data);
         var article = new Object;
-        el.find("meta[property*='og']").each(function(key, val) {
-          var property = this.getAttribute('property').substr(3);
-          var content = val.content;
-          article[property] = content;
-          console.log(article);
-          window.storage.push(article);
-        });
+
+        el.find("meta[property*='og']")
+          .each(function(key, val) {
+            var property = this.getAttribute('property').substr(3);
+            article[property] = val.content;
+
+            window.storage.push(article);
+          });
       });
     }
 

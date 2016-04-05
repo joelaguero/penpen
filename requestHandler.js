@@ -1,5 +1,3 @@
-
-
 var _makeGetRequest = function(url, callback) {
   $.ajax({
     url: url,
