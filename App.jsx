@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ArticleList from './ArticleList.jsx';
 
 class App extends React.Component{
   constructor(props) {
     super(props);
   }
+
   render() {
     return(
-      <h1>Welcome to Penpen!</h1>
-    )
-  };
+      <div>
+        <h1>Welcome to Penpen, {this.props.name}!</h1>
+        <ArticleList/>
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(< App name='Jenny'/>, document.getElementById('app'));
