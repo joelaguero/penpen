@@ -12,10 +12,12 @@ class App extends React.Component{
   }
 
   addArticle(article) {
-    console.log(article);
-    // this.setState({
-    //   articles: this.props.articles.push(article)
-    // });
+    var articles = this.state.articles;
+    articles.push(article);
+
+    this.setState({
+      articles: articles
+    });
   }
 
   render() {

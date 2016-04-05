@@ -15,7 +15,6 @@ class ArticleCreator extends React.Component {
   }
 
   render() {
-
     return(
       <form onSubmit={this.handleClick}>
         <input type='url' ref='targetUrl' placeholder='Enter a URL'/>
