@@ -7,17 +7,19 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      articles: [ {
-        description: "A CNN report called the Brazilian soccer team’s followers the “craziest fans” in all of sports.",
-        image: "http://www.newyorker.com/wp-content/uploads/2014/01/McGrath_01-1200-630.jpg",
-        locale: "en_US",
-        site_name: "The New Yorker",
-        title: "People’s Republic of Corinthians - The New Yorker",
-        type: "article",
-        updated_time: "2014-07-16T15:48:21-04:00",
-        url: "http://www.newyorker.com/culture/photo-booth/peoples-republic-of-corinthians"
-      }]
+      articles: []
     };
+  }
+
+  componentDidMount() {
+    $.get('/api/articles', function(data) {
+      console.log(data);
+    });
+    this.serverRequest = $.get('/api/articles', function (data) {
+      this.setState({
+        articles: data
+      });
+    }.bind(this));
   }
 
   addArticle(article) {
