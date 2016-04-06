@@ -23,6 +23,7 @@
     "express": "^4.13.4",
     "express-session": "^1.7.6",
     "handlebars": "^4.0.5",
+    "jsonwebtoken": "^5.7.0",
     "mongoose": "^4.4.11",
     "react": "^0.14.8",
     "react-dom": "^0.14.8"

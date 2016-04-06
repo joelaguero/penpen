@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 
+var jwt = require('jsonwebtoken');
 var config = require('./config/config.js');
 var routes = require('./config/routes.js');
 var User = require('./app/users/userModel.js');

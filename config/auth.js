@@ -1,14 +1,23 @@
-var isAuthenticated = function (req, res, next) {
+var User = require('../app/users/userModel.js');
 
-    // do any checks you want to in here
+module.exports = function(req, res) {
+  User.findOne({
+    name: req.body.name
+  }, function(err, user) {
+    if (err) throw err;
 
-    // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
-    // you can do this however you want with whatever variables you set up
-    if (false)
-        return next();
+    if (!user) {
+      res.json({ success: false, message: 'Authentication failed.' });
+    } else if (user) {
 
-    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
-    res.redirect('/signin.html');
+      // Check password.
+      // If password incorrect, res false.
+      // If user found and password correct, create token and return information.
+      res.json({
+        success: true,
+        message: 'Enjoy your token!'
+        // Add token
+      })
+    }
+  });
 }
-
-module.exports = isAuthenticated;
