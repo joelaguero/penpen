@@ -14,7 +14,6 @@ var Article = require('./app/articles/articleModel.js');
 // Configuration
 var port = process.env.PORT || 3000;
 mongoose.connect(config.database);
-app.set('secret', config.secret);
 
 // Use body parser to get info from POST request or URL parameters.
 app.use(bodyParser.urlencoded({ extended: true }));

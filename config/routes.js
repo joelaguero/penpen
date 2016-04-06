@@ -13,4 +13,21 @@ module.exports = function(app, express) {
   app.get('/api/users', userController.allUsers);
 
   app.post('/api/authenticate', authenticate);
+
+  // app.get('/setup', function(req, res) {
+  //   var User = require('../app/users/userModel.js');
+  //
+  //   var test = new User({
+  //     name: 'Harold Ryans',
+  //     password: 'password',
+  //     admin: true
+  //   });
+  //
+  //   test.save(function(err) {
+  //     if (err) throw err;
+  //
+  //     console.log('User saved successfully');
+  //     res.json({ success: true });
+  //   })
+  // });
 };
