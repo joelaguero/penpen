@@ -14,6 +14,9 @@ module.exports = function(app, express) {
 
   app.post('/api/authenticate', authenticate);
 
+  // ========
+  // Testing
+  // ========
   // app.get('/setup', function(req, res) {
   //   var User = require('../app/users/userModel.js');
   //
