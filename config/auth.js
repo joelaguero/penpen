@@ -9,7 +9,7 @@ module.exports = function(req, res) {
     if (err) throw err;
 
     if (!user) {
-      res.json({ success: false, message: 'Authentication failed.' });
+      res.json({ success: false, message: 'Authentication failed. User not found.' });
     } else if (user) {
       // Check password.
       // If password incorrect, res false.
