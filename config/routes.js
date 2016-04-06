@@ -5,6 +5,11 @@ var authenticate = require('./auth.js');
 module.exports = function(app, express) {
   var apiRoutes = express.Router();
 
+  apiRoutes.post('/authenticate', authenticate.requestToken);
+
+  // Authenticate by checking token.
+  apiRoutes.use(authenticate.verifyToken);
+
   apiRoutes.get('/', function(req, res) {
     res.json({ message: 'This is the API!'});
   });
@@ -14,7 +19,6 @@ module.exports = function(app, express) {
 
   apiRoutes.get('/users', userController.allUsers);
 
-  apiRoutes.post('/authenticate', authenticate);
 
   app.use('/api', apiRoutes);
 
