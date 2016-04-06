@@ -1,5 +1,5 @@
-var articlesController = require('../articles/articleController.js');
-var usersController = require('../users/userController.js');
+var articlesController = require('../app/articles/articleController.js');
+var usersController = require('../app/users/userController.js');
 
 module.exports = function(app, express) {
   app.get('/api/articles', articlesController.allArticles);

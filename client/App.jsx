@@ -40,7 +40,8 @@ class App extends React.Component{
   render() {
     return(
       <div>
-        <h1>Welcome to Penpen, {this.props.name}!</h1>
+        <h1>Penpen</h1>
+        <p>Enter a link to your online articles to make a portfolio of your work.</p>
         <ArticleCreator addArticle={this.addArticle.bind(this)} />
         <ArticleList articles={this.state.articles} />
       </div>
