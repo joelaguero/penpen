@@ -6,8 +6,9 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 
 var config = require('./config/config.js');
-var routes = require('./config/routes.js')
-var User = require('./app/users/userModel.js')
+var routes = require('./config/routes.js');
+var User = require('./app/users/userModel.js');
+var Article = require('./app/articles/articleModel.js');
 
 // Configuration
 var port = process.env.PORT || 3000;
@@ -25,9 +26,8 @@ app.use(morgan('dev'));
 
 // Configure the server with routes.
 app.get('/', function(req, res) {
-  res.send('Hi');
+  res.sendFile(__dirname + '/client/index.html');
 });
-
 routes(app, express);
 
 // Start server.
