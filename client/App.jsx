@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import ArticleList from './ArticleList.jsx';
 import ArticleCreator from './ArticleCreator.jsx';
 
@@ -50,4 +50,9 @@ class App extends React.Component{
   }
 }
 
-ReactDOM.render(< App name='Jenny'/>, document.getElementById('app'));
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route path='/' component={App}>
+    </Route>
+  </Router>
+), document.getElementById('app'));
